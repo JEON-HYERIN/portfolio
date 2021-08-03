@@ -596,4 +596,8 @@ footer p small {
     width: 80px;
     height: 80px;
   }
+
+  header .header__menu.clicked {
+    display: flex;
+  }
 }
