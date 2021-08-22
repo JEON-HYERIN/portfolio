@@ -111,8 +111,8 @@ a {
 
 #navbar.navbar--dark {
   background-color: var(--color-pink);
-  padding: 8px;
 }
+
 
 .navbar__logo {
   font-size: var(--font-medium);
