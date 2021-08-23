@@ -30,3 +30,11 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior: "smooth"});
 }
+
+const homeContainerEl = document.querySelector('.home__container');
+const homeContainerElHeight = homeContainerEl.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+ homeContainerEl.style.opacity = 1 - window.scrollY / homeContainerElHeight;
+ console.log(1 - window.scrollY / homeContainerElHeight);
+});

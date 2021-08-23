@@ -155,6 +155,15 @@ a {
   text-align: center;
 }
 
+.home__container {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.home__container.opacity {
+  opacity: .1s;
+}
+
 
 .home__avatar {
   width: 250px;
