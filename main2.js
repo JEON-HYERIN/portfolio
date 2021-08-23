@@ -17,6 +17,7 @@ navberMenu.addEventListener('click', (event) => {
   if(link === null) {
     return ;
   } else {
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
   };
 });
@@ -31,7 +32,7 @@ const homeContainerElHeight = homeContainerEl.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
  homeContainerEl.style.opacity = 1 - window.scrollY / homeContainerElHeight;
- console.log(1 - window.scrollY / homeContainerElHeight);
+//  console.log(1 - window.scrollY / homeContainerElHeight);
 });
 
 
@@ -49,6 +50,19 @@ arrowUp.addEventListener('click', () => {
 });
 
 
+// const workBtnContainer = document.querySelector('.work__categories');
+// const projectContainer = document.querySelector('.work__projects');
+// const projects = document.querySelectorAll('.project');
+// workBtnContainer.addEventListener('click', (event) => {
+//   const filter = event.target.dataset.filter;
+//   console.log(filter);
+// });
+
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarToggleBtn.addEventListener('click', function () {
+  navberMenu.classList.toggle('open');
+});
 
 
 function scrollIntoView(selector) {
