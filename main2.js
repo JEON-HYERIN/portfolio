@@ -12,13 +12,21 @@ document.addEventListener('scroll', () => {
 });
 
 const navberMenu = document.querySelector('.navbar__menu');
-navberMenu.addEventListener('click', () => {
+navberMenu.addEventListener('click', (event) => {
   const link = event.target.dataset.link;
   if(link === null) {
     return ;
   } else {
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth"});
+    scrollIntoView(link);
   };
-  
 });
+
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+  scrollIntoView('#contact');
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({behavior: "smooth"});
+}
