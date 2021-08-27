@@ -12,6 +12,7 @@ document.addEventListener('scroll', () => {
 });
 
 const navberMenu = document.querySelector('.navbar__menu');
+const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
 navberMenu.addEventListener('click', (event) => {
   const link = event.target.dataset.link;
   if(link === null) {
@@ -50,14 +51,6 @@ arrowUp.addEventListener('click', () => {
 });
 
 
-// const workBtnContainer = document.querySelector('.work__categories');
-// const projectContainer = document.querySelector('.work__projects');
-// const projects = document.querySelectorAll('.project');
-// workBtnContainer.addEventListener('click', (event) => {
-//   const filter = event.target.dataset.filter;
-//   console.log(filter);
-// });
-
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarToggleBtn.addEventListener('click', function () {
@@ -69,3 +62,95 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior: "smooth"});
 }
+
+
+// const spyEls = document.querySelectorAll('section.scroll-spy');
+// spyEls.forEach(function (spyEl) {
+//     new ScrollMagic
+//     .Scene({
+//       triggerElement: spyEl,
+//       triggerHook: .1
+//     })
+//     .setClassToggle(spyEl,'show')
+//     .addTo(
+//       new ScrollMagic.Controller()
+//     );
+//   });
+
+  // // jQuery
+  // $('.navbar__menu__item').live('click', function (){
+  //   $('.navbar__menu__item').removeClass('active');
+  //   $(this).addClass('active');
+  // })
+
+
+
+  // 1. 모든 섹션 요소들을 가지고 온다.
+  // 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
+  // 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
+
+  // const sectionIds = [
+  //   '#home',
+  //   '#about',
+  //   '#skills',
+  //   '#work',
+  //   '#testimonials',
+  //   '#contact',
+  // ];
+  // const sections = sectionIds.map(id => document.querySelector(id));
+  // const navItems = sectionIds.map(id =>
+  //   document.querySelector(`[data-link="${id}"]`)
+  // );
+  
+  // // const sections = sectionIds.map(function (id) {
+  // //   document.querySelector(id);
+  // // })
+  // console.log(sections);
+  // console.log(navItems);
+
+  // let selectedNavItem = navItems[0];
+
+  // const observerOptions = {
+  //   root: null,
+  //   rootMargin: '0px',
+  //   threshold: 0.3,
+  // };
+
+  // const observerCallback = (entries, observer) => {
+  //   entries.forEach(entry => {
+  //     if(!entry.isIntersecting) {
+  //       const index = sectionIds.indexOf(`#${entry.target.id}`);
+  //       // console.log('index',index,'target.id',entry.target.id);
+
+  //       // 스크롤링이 아래도되어서 페이지가 올라옴
+  //       if(entry.boundingClientRect.y < 0) {
+  //         selectedIndex = index + 1;
+  //       } else {
+  //         selectedIndex = index - 1;
+  //       }
+  //       selectedNavItem.classList.remove('active');
+  //       const navItem = navItems[selectedIndex];
+  //       navItem.classList.add('active');
+  //     }
+  //   });
+  // };
+  // const observer = new IntersectionObserver(observerCallback, observerOptions);
+  // sections.forEach(section => observer.observe(section));
+
+  const workBtnContainer = document.querySelector('.work__categories');
+  const projectContainer = document.querySelector('.work__projects');
+  const projects = document.querySelectorAll('.project');
+  workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter === null) {
+      return;
+    }
+    projects.forEach((project) => {
+      console.log(project.dataset.type);
+      if ( filter === '*' || filter === project.dataset.type) {
+        project.classList.remove('invisible');
+      } else {
+        project.classList.add('invisible');
+      }
+    });
+  });

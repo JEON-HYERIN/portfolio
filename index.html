@@ -19,6 +19,7 @@
   <!-- ScrollMagic -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- <script defer src="main.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script defer src="./main2.js"></script>
 </head>
 <body>
@@ -44,7 +45,7 @@
     </nav>
 
   <!-- Home -->
-  <section id="home">
+  <section id="home" class="scroll-spy">
     <div class="home__container">
       <img 
       src="./images/profile.PNG" 
@@ -57,7 +58,7 @@
     </div>
   </section>
   <!-- About -->
-  <section id="about" class="section section__container">
+  <section id="about" class="section section__container scroll-spy">
     <h1>About me</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
        Quasi cum optio, accusamus ipsum, architecto aut reprehenderit quam pariatur animi, numquam maxime magni itaque. Ab sunt nobis fugit labore unde aut.
@@ -108,7 +109,7 @@
     </div>
   </section>
   <!-- Skills -->
-  <section id="skills" class="section">
+  <section id="skills" class="section scroll-spy">
     <div class="section__container">
       <h1>Skills</h1>
       <h2>Skills & Attributes</h2>
@@ -200,7 +201,7 @@
     </div>
   </section>
   <!-- Work -->
-  <section id="work" class="section">
+  <section id="work" class="section scroll-spy">
     <div class="section__container">
     <h1>My work</h1>
     <h3>Projects</h3>
@@ -279,7 +280,7 @@
     </div>
   </section>
   <!-- Testimonials -->
-  <section id="testimonials" class="section">
+  <section id="testimonials" class="section scroll-spy">
     <div class="section__container">
     <h1>Testimonials</h1>
     <h3>See what they say about me</h3>
@@ -314,7 +315,7 @@
   </div>
   </section>
   <!-- Contact -->
-  <section id="contact" class="section">
+  <section id="contact" class="section scroll-spy">
     <h1 class="contact__title">Let's talk</h1>
     <h2 class="contact__email">jeonhyelin19951118@gmail.com</h2>
     <div class="contact__links">
@@ -333,5 +334,6 @@
   <button class="arrow-up">
     <i class="fas fa-arrow-up"></i>
   </button>
+
 </body>
 </html>
