@@ -404,6 +404,10 @@ header .header__toggleBtn {
   cursor: pointer;
 }
 
+#work .projects li.invisible {
+  display: none;
+}
+
 #work .projects li:hover .description{
   opacity: 0.8;
   transform: translateY(0);

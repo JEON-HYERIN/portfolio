@@ -145,8 +145,15 @@ function scrollIntoView(selector) {
     if (filter === null) {
       return;
     }
+
+    // Remove selection from the previous items and selected new one
+    const actvie = document.querySelector('.category__btn.selected');
+    actvie.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
     projects.forEach((project) => {
-      console.log(project.dataset.type);
+      console.log('type:',project.dataset.type);
       if ( filter === '*' || filter === project.dataset.type) {
         project.classList.remove('invisible');
       } else {

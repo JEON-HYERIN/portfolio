@@ -60,3 +60,20 @@ function scrollIntoView (selector) {
   scrollTo.scrollIntoView({behavior:"smooth"});
 }
 
+
+// projects filter
+const workBtn = document.querySelector('#work .btn');
+const projects = document.querySelectorAll('#work .project');
+
+workBtn.addEventListener('click', function (event) {
+  const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  console.log(filter);
+  projects.forEach(function (project) {
+    console.log('type:',project.dataset.type);
+    if (filter === '*' || filter === project.dataset.type) {
+      project.classList.remove('invisible');
+    } else {
+      project.classList.add('invisible');
+    }
+  });
+});
